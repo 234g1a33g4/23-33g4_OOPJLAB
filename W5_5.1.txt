@@ -1,0 +1,40 @@
+interface Banks {
+    void AllBanks(); 
+}
+class SBI implements Banks {
+    public void AllBanks() {
+        System.out.println("State Bank of India");
+        System.out.println("SBI Interest Rate: 5%");
+    }
+}
+class APGB implements Banks {
+    public void AllBanks() {
+        System.out.println("Andhra Pragathi Grameena Bank"); 
+        System.out.println("APGB Interest Rate: 6%"); 
+    }
+}
+class CUB implements Banks {
+    public void AllBanks() {
+        System.out.println("City Union Bank"); 
+        System.out.println("CUB Interest Rate: 4%"); 
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Banks obj1 = new SBI();
+        Banks obj2 = new APGB();
+        Banks obj3 = new CUB();
+        obj1.AllBanks();
+        obj2.AllBanks();
+        obj3.AllBanks();
+    }
+}
+
+
+OUTPUT:
+State Bank of India
+SBI Interest Rate: 5%
+Andhra Pragathi Grameena Bank
+APGB Interest Rate: 6%
+City Union Bank
+CUB Interest Rate: 4%
