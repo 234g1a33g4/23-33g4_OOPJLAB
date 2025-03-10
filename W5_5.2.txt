@@ -1,0 +1,29 @@
+class Animal {
+    void makeSound() {
+        System.out.println("Animals make sounds");
+    }
+}
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Dog makes a sound like BOW BOW!!!");
+    }
+}
+class Cat extends Animal {
+    void makeSound() {
+        System.out.println("Cat makes a sound like Meow meow!");
+    }
+}
+public class Main{
+    public static void main(String[] args) {
+        Animal obj;
+        obj = new Dog(); 
+        obj.makeSound();
+        obj = new Cat(); 
+        obj.makeSound();
+    }
+}
+
+
+OUTPUT:
+Dog makes a sound like BOW BOW!!!
+Cat makes a sound like Meow meow!
