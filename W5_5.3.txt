@@ -1,0 +1,52 @@
+import java.util.Scanner;
+public class StringBufferExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the original string: ");
+        StringBuffer strBuffer = new StringBuffer(sc.nextLine());
+        System.out.println("\nChoose an option:");
+        System.out.println("1. Delete a substring");
+        System.out.println("2. Remove a specific character");
+        System.out.print("Enter your choice: ");
+        int choice = sc.nextInt();
+        sc.nextLine(); 
+        switch (choice) {
+            case 1:
+                System.out.print("Enter the substring to delete: ");
+                String substring = sc.nextLine();
+                int startIndex = strBuffer.indexOf(substring);
+                if (startIndex != -1) {
+                    strBuffer.delete(startIndex, startIndex + substring.length());
+                    System.out.println("Updated string: " + strBuffer);
+                } else {
+                    System.out.println("Substring not found!");
+                }
+                break;
+            case 2:
+                System.out.print("Enter the character to remove: ");
+                char charToRemove = sc.next().charAt(0);
+                for (int i = 0; i < strBuffer.length(); i++) {
+                    if (strBuffer.charAt(i) == charToRemove) {
+                        strBuffer.deleteCharAt(i);
+                        i--; 
+                    }
+                }
+                System.out.println("Updated string: " + strBuffer);
+                break;
+            default:
+                System.out.println("Invalid choice!");
+        }
+    }
+}
+
+
+
+
+OUTPUT:
+Enter the original string: helloworld
+Choose an option:
+1. Delete a substring
+2. Remove a specific character
+Enter your choice: 1
+Enter the substring to delete: world
+Updated string: hello
