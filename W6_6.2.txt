@@ -1,0 +1,22 @@
+public class MultipleCatchExample {
+    public static void main(String[] args) {
+        try {
+            int result = 10/0;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero is not allowed.");
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Invalid number format.");
+        } catch (Exception e) {
+            System.out.println("An unexpected error occurred: " + e.getMessage());
+        }
+        System.out.println("Program continues...");
+    }
+}
+
+
+
+OUTPUT:
+ERROR!
+Error: Division by zero is not allowed.
+Program continues...
